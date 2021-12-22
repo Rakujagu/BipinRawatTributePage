@@ -1,0 +1,521 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/* NAVBAR CSS START HERE  */
+header{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: #262626;
+    width: 100%;
+    box-sizing: border-box;
+}
+header .logo{
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+header .logo a{
+    text-decoration: none;
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header nav{
+    float: right;
+}
+header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+header nav ul li a:hover{
+    color: #fff;
+    background: #710c19;
+}
+.menu-toggle{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+@media (max-width: 991px)
+{
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    header nav{
+        
+        position: absolute;
+        width: 100%;
+        height: calc(1v00h-50px) ;
+        background: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+    }
+    header nav.active{
+        left: 0;
+    }
+    header nav ul{
+        display: block;
+        text-align: center;
+    }
+    header nav ul li{
+        border-bottom: 1px solid #262626;
+    }
+}
+
+/* BANNER CSS START HERE  */
+
+*{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #710c19;
+}
+.banner2{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    perspective: 500px;
+}
+.banner2 h2{
+    position:relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 10vw;
+    color: #fff;
+    font-weight: 700;
+}
+.banner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+}
+.banner .blocks{
+position: relative;
+display: block;
+width: 5vw;
+height: 5vh;
+animation: animate 2s ease-in-out forwards;
+animation-delay: 1s;
+}
+@keyframes animate
+{
+    0%{
+        
+        transform: translateY(-2000px);
+        background: url(br3.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        box-shadow: 0 5px 15px rgba(0, 0 , 0, 0.5);
+    }
+    100%{
+        transform: translateY(0px);
+        background: url(br3.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        border: 1px solid rgba(0, 0 , 0, 0);
+        box-shadow: 0 5px 15px rgba(0, 0 , 0, 0);
+    }
+}
+.banner2.active.banner.blocks{
+   
+    animation: animateTwo 2s ease-in-out forwards;
+    background: url(br3.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    border: 1px solid rgba(0, 0 , 0, 0.1);
+    
+}
+@keyframes animateTwo
+{
+    0%{
+        transform: translateZ(0px);
+        background: url(br3.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        box-shadow: 0 5px 15px rgba(0, 0 , 0, 0.5);
+    }
+    100%{
+        transform: translateZ(-2000px);
+        background: url(br3.jpg);
+        background-position: center;
+        background-attachment: fixed;
+        background-size: cover;
+        border: 1px solid rgba(0, 0 , 0, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0 , 0, 0);
+    }
+}
+
+
+/* CONTENT BOX CSS START HERE  */
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #262626;
+    color: #fff;
+  
+}
+
+section .content{
+    max-width: 80%;
+    
+}
+section .content h2{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 4vw;
+    transition: 0.5s;
+    transform-origin: left;
+    transform: scaleX(0);
+}
+section .content h2[data-scroll="in"]
+{
+    transform: scaleX(1);
+}
+section .content h2:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #e02bff;
+    transform-origin: right;
+    transition: 0.5s;
+}
+section .content h2[data-scroll="in"]:before
+{
+transform: scaleX(0);
+transition-delay: 0.5s;
+}
+section .content h3{
+    position: relative;
+    margin: 50px 0 0;
+    padding: 0;
+    display: inline-block;
+    font-size: 3vw;
+    transition: 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+}
+section .content h3[data-scroll="in"]
+{
+    transform: scaleX(1);
+    transition-delay: 1s;
+}
+section .content h3:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffeb3b;
+    transform-origin: left;
+    transition: 0.5s;
+}
+section .content h3[data-scroll="in"]::before
+{
+    transform: scaleX(0);
+    transition-delay: 1.5s;
+
+}
+section .content a{
+    position: relative;
+    background: #fff;
+    color: #262626;
+    padding: 15px 30px;
+    font-size: 1vw;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 1s;
+    transform: translateX(50px);
+    opacity: 0;
+}
+section .content a:hover{
+    background: #00bfff;
+    
+}
+section .content a[data-scroll="in"]
+{
+transform: translateX(0);
+transition-delay: 1s;
+opacity: 1;
+}
+section .content p{
+    font-size: 1.5vw;
+    transition: 1s;
+    opacity: 0;
+}
+section .content p[data-scroll="in"]
+{
+opacity: 1;
+transition-delay: 1s;
+}
+
+
+
+/* CONTENT BOX CSS END HERE  */
+
+/* SLIDER SECTION START HERE  */
+
+
+/* .slider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #111;
+} */
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    background: #000;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+ 
+
+  /* DATE BOX START HERE  */
+
+  .date-box{
+      background: linear-gradient(90deg,#f1f4f9,#eb63b7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+  }
+ 
+  .date-box div{
+      box-shadow: 10px 10px 10px rgba(0,0,0,0.2);
+      height: 100px;
+      width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(to right, #1cd8d2,#93edc7);
+      color: #fff;
+      margin: 50px 0;
+      border-radius: 5px;
+  }
+  .date-box div span{
+      color: #710c19;
+      font-weight: 700;
+      font-size: 1.2em;
+  }
+  .date-box .color{
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(to right, #eb63b7,#f1f4f9);
+      position: absolute;
+  }
+  .date-box .color:nth-child(1){
+      top: 750%;
+      left: 15%;
+      animation: square 5s linear infinite;
+  }
+  .date-box .color:nth-child(2){
+      top: 750%;
+      right: 15%;
+      animation: square 7s linear infinite;
+  }
+  .date-box .color:nth-child(3){
+      top: 825%;
+      left: 15%;
+      animation: square 9s linear infinite;
+  }
+  .date-box .color:nth-child(4){
+      top: 850%;
+      right: 15%;
+      animation: square 5s linear infinite;
+  }
+  .date-box .color:nth-child(5){
+      top: 915%;
+      left: 15%;
+      animation: square 7s linear infinite;
+  }
+  .date-box .color:nth-child(6){
+      top: 950%;
+      right: 15%;
+      animation: square 9s linear infinite;
+  }
+  .date-box .color:nth-child(7){
+      top: 1025%;
+      left: 15%;
+      animation: square 3s linear infinite;
+  }
+  .date-box .color:nth-child(8){
+      top: 1050%;
+      right: 15%;
+      animation: square 5s linear infinite;
+  }
+  .date-box .color:nth-child(9){
+      top: 1125%;
+      left: 15%;
+      animation: square 7s linear infinite;
+  }
+  .date-box .color:nth-child(10){
+      top: 1125%;
+      right: 15%;
+      animation: square 9s linear infinite;
+      
+  }
+  .date-box .color:nth-child(11){
+      top: 700%;
+      left: 15%;
+      animation: square 11s linear infinite;
+      
+  }
+  .date-box .color:nth-child(12){
+      top: 800%;
+      right: 15%;
+      animation: square 1s linear infinite;
+  }
+  .date-box .color:nth-child(13){
+      top: 900%;
+      left: 15%;
+      animation: square 4s linear infinite;
+  }
+  .date-box .color:nth-child(14){
+      top: 1000%;
+      right: 15%;
+      animation: square 9s linear infinite;
+  }
+  .date-box .color:nth-child(15){
+      top: 1100%;
+      left: 15%;
+      animation: square 2s linear infinite;
+  }
+  .date-box .color:nth-child(16){
+      top: 1200%;
+      right: 15%;
+      animation: square 8s linear infinite;
+  }
+  .date-box .color:nth-child(17){
+      top: 775%;
+      left: 15%;
+      animation: square 11s linear infinite;
+  }
+  .date-box .color:nth-child(18){
+      top: 875%;
+      right: 15%;
+      animation: square 1s linear infinite;
+  }
+  .date-box .color:nth-child(19){
+      top: 975%;
+      left: 15%;
+      animation: square 5s linear infinite;
+     
+  }
+  .date-box .color:nth-child(20){
+      top: 1075%;
+      right: 15%;
+      animation: square 8s linear infinite;
+     
+  }
+  .date-box .color:nth-child(21){
+      top: 1175%;
+      left: 15%;
+      animation: square 5s linear infinite;
+      
+  }
+  .date-box .color:nth-child(22){
+      top: 1200%;
+      right: 15%;
+      animation: square 11s linear infinite;
+      
+  }
+  @keyframes square{
+      0%{
+          transform: scale(0) translateY(0) rotate(0);
+      }
+      0%{
+          transform: scale(1.2) translateY(-90px) rotate(360deg);
+      }
+  }
+
+  /* footer section styling */
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
